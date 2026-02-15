@@ -1,0 +1,11 @@
+from fastapi import FastAPI
+from app.api.v1.decision import router as decision_router
+
+app = FastAPI(
+    title="AI Decision Support System",
+    version="1.0.0",
+    description="Evidence-based Decision Recommendation Engine"
+)
+
+# Include API routers
+app.include_router(decision_router, prefix="/api/v1")
